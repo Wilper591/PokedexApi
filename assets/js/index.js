@@ -18,8 +18,9 @@ const mostrarCard = async (id) => {
   // Hacer un innerHTML para el cardSection para insertar los card de cada pokemon
   let pokemonCards = "";
   pokemonCards += `<div>
-            <p class="text-danger fs-1"> ${pokemons.nombre}</p>
+            <p class="text-danger fs-1 text-capitalize"> ${pokemons.nombre}</p>
             <img class="image-fluid" src="${pokemons.img}">
+            <p class="text-success text-capitalize">Tipo: ${pokemons.tipo} </p>
         </div>`;
   cardSection.innerHTML = pokemonCards;
 };
