@@ -1,5 +1,4 @@
 let URL_BASE = "https://pokeapi.co/api/v2/pokemon";
-/* let pokemonName = "charmander"; */
 export const getPokemons = async (id) => {
   try {
     let response = await fetch(`${URL_BASE}/${id}`);
