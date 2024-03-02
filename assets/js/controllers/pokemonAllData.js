@@ -7,7 +7,6 @@ export const getAllPokemons = async () => {
       nombre: data.results.map((poke) => poke.name),
       url: data.results.map(poke => poke.url)
     };
-/*     console.log(allPokemons); */
     return allPokemons;
   } catch (error) {
     console.log(error);
