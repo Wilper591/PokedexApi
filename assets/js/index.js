@@ -15,10 +15,10 @@ const mostrarCard = async (id) => {
   const pokemons = data;
   /*   console.log(data); */
   let pokemonCards = "";
-  pokemonCards += `<div class="text-center">
+  pokemonCards += `<div class="text-center m-3">
             <p class="text-danger fs-1 text-capitalize"> ${pokemons.nombre}</p>
-              <img class="image-fluid border border-2 border-black" src="${pokemons.img}">
-            <p class="text-success text-capitalize">Tipo: ${pokemons.tipo} </p>
+              <img class="image-fluid" src="${pokemons.img}">
+            <p class="fs-3 text-success text-capitalize">Tipo: ${pokemons.tipo} </p>
         </div>`;
   cardSection.innerHTML = pokemonCards;
 };
@@ -34,7 +34,7 @@ const mostrarCard = async (id) => {
     const pokemonsTipo = data.tipo;
     pokemonAllImg += `
     <div id="pokeCard" class="fs-2">
-      <img class="container m-2 p-2" src="${pokemonsImg}">
+      <img id="imgCard" class="container m-2 p-2" src="${pokemonsImg}">
       <p id="nombrePoke" class="fw-bold text-capitalize border-bottom border-3">${pokemonsName}</p>
       <p class="text-capitalize">${pokemonsTipo} </p>
     </div>`;

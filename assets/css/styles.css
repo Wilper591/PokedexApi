@@ -21,5 +21,9 @@ body {
   border-radius: 5%;
   margin: 4rem;
   width: 15rem;
+  height: 20rem;
   text-align: center;
+}
+#imgCard {
+    max-height: 10rem;
 }
