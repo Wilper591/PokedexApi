@@ -13,10 +13,7 @@ btnPokemon.addEventListener("click", (e) => {
 const mostrarCard = async (id) => {
   const data = await getPokemons(id);
   const pokemons = data;
-  console.log(data.estadisticasName);
-  console.log(data.estadisticasValor);
   let pokemonCards = "";
-
   let estadisticasPokemon = "";
   /* Iterador de estadisticas pokemon */
   for (let i = 0; i < pokemons.estadisticasName.length; i++) {
@@ -25,12 +22,12 @@ const mostrarCard = async (id) => {
   }
   pokemonCards += 
     `<div id="inputCard" class="text-center m-3">
-        <p class="fs-1 text-capitalize"> ${pokemons.nombre}</p>
-          <img class="image-fluid mb-3" src="${pokemons.img}">
+        <p class="fs-2 text-capitalize"> ${pokemons.nombre}</p>
+          <img class="image-fluid mb-3 container" src="${pokemons.img}">
         <p class="fs-3 text-capitalize border-top border-3">Tipo: ${pokemons.tipo} </p>
     </div>
     <div id="statsCard">
-      <p>Estadisticas</p>
+      <p class="fs-1 border-bottom border-3">Estadísticas</p>
       ${estadisticasPokemon}
     </div`;
   cardSection.innerHTML = pokemonCards;
