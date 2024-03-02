@@ -1,0 +1,23 @@
+{
+  "type": "module",
+  "name": "pokedexapi",
+  "version": "1.0.0",
+  "description": "Aplicación Pokedex",
+  "main": "index.js",
+  "scripts": {
+    "all": "node ./assets/js/controllers/pokemonAllData.js",
+    "poke": "node ./assets/js/controllers/pokemonData.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wilper591/PokedexApi.git"
+  },
+  "keywords": [],
+  "author": "Jorge Alberto Cerda Rodriguez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Wilper591/PokedexApi/issues"
+  },
+  "homepage": "https://github.com/Wilper591/PokedexApi#readme"
+}

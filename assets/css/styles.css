@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+#inputId {
+    width: 35%;
+}
+
+#pokeCard {
+    color: green;
+}
