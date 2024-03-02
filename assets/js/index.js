@@ -9,6 +9,7 @@ btnPokemon.addEventListener("click", (e) => {
   mostrarCard(inputPokemon.value);
 });
 
+/* Funcion para mostrar Card al buscar en el input */
 const mostrarCard = async (id) => {
   const data = await getPokemons(id);
   const pokemons = data;
@@ -22,29 +23,57 @@ const mostrarCard = async (id) => {
   cardSection.innerHTML = pokemonCards;
 };
 
-(async () => {
-  const data = await getAllPokemons();
-  const pokemones = data.nombre;
-  /*   console.log(pokemones); */
-  let pokemonAllCards = "";
-  for (let i = 0; i < pokemones.length; i++) {
-    pokemonAllCards += `
-        <p id="pokeCard" class="row col-3 border border-2 fw-bold fs-1 text-justify text-capitalize">${pokemones[i]}</p>
-  `;
-  }
-  allCardsSection.innerHTML = pokemonAllCards;
-})();
-
+/* IIFE para insertar imagenes */
 (async () => {
   const idPokemones = 10;
   let pokemonAllImg = "";
   for (let id = 1; id <= idPokemones; id++) {
     const data = await getPokemons(id);
-    console.log(data.img);
     const pokemons = data.img;
-
-      pokemonAllImg += `<img class="image-fluid border border-2 border-black" src="${pokemons}">`;
-
+    pokemonAllImg += `
+    <img class="image-fluid border border-2 border-black m-2 p-2" src="${pokemons}">
+    <div id="nombrePoke">
+    </div>`;
     allCardsSection.innerHTML = pokemonAllImg;
   }
 })();
+
+/* Funcion para insertar los nombres de todos los pokemon */
+(async () => {
+  const data = await getAllPokemons();
+  const pokemones = data.nombre;
+  console.log(pokemones);
+  let pokemonAllCards = "";
+  for (let i = 0; i < pokemones.length; i++) {
+    pokemonAllCards += `
+        <p id="pokeCard" class="text-capitalize">${pokemones[i]}</p>
+  `;
+  }
+  const pokeName = document.querySelector("#nombrePoke");
+  pokeName.innerHTML = pokemonAllCards;
+})();
+/* (async () => {
+  const idPokemones = 10;
+  let pokemonAllImg = "";
+  for (let id = 1; id <= idPokemones; id++) {
+    const data = await getPokemons(id);
+    const pokemons = data.img;
+    // Itera sobre cada imagen y agrega la etiqueta img correspondiente
+    for (let i = 0; i < pokemons.length; i++) {
+      pokemonAllImg += `<img class="image-fluid border border-2 border-black m-2 p-2" src="${pokemons[i]}">`;
+    }
+  }
+  // Agrega las imágenes al elemento allCardsSection
+  allCardsSection.innerHTML = pokemonAllImg;
+
+  // Ahora, añade los nombres de los pokemons
+  const dataNames = await getAllPokemons();
+  const pokemones = dataNames.nombre;
+  let pokemonAllCards = "";
+  for (let i = 0; i < pokemones.length; i++) {
+    pokemonAllCards += `<p class="text-capitalize">${pokemones[i]}</p>`;
+  }
+  // Agrega los nombres al elemento con id "nombrePoke"
+  const pokeName = document.querySelector("#nombrePoke");
+  pokeName.innerHTML = pokemonAllCards;
+})(); */

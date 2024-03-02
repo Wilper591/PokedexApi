@@ -13,4 +13,3 @@ export const getAllPokemons = async () => {
     console.log(error);
   }
 };
-getAllPokemons()
