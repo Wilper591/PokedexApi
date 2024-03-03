@@ -15,16 +15,23 @@ const mostrarCard = async (id) => {
   const pokemons = data;
   let pokemonCards = "";
   let estadisticasPokemon = "";
+  let PokeTipo = "";
   /* Iterador de estadisticas pokemon */
   for (let i = 0; i < pokemons.estadisticasName.length; i++) {
     estadisticasPokemon += 
-    `<p class="text-uppercase">${pokemons.estadisticasName[i]}: ${pokemons.estadisticasValor[i]}</p>`;
+    `<p class="text-uppercase">
+        ${pokemons.estadisticasName[i]}: ${pokemons.estadisticasValor[i]}
+    </p>`;
   }
-  pokemonCards += 
-    `<div id="inputCard" class="text-center m-3">
-        <p class="fs-2 text-capitalize"> ${pokemons.nombre}</p>
-          <img class="image-fluid mb-3 container" src="${pokemons.img}">
-        <p class="fs-3 text-capitalize border-top border-3">Tipo: ${pokemons.tipo} </p>
+  for (let i = 0; i < pokemons.tipo.length; i++) {
+    PokeTipo += `${pokemons.tipo[i]} `;
+  }
+  pokemonCards += `<div id="inputCard" class="text-center m-3">
+        <p class="fs-3 text-capitalize border-bottom border-3"> ${pokemons.nombre}</p>
+          <img class="image-fluid m-1 container" src="${pokemons.img}">
+        <div id="contenedorTipo" class="border-top border-3">
+        <p class="fs-3 text-capitalize mt-2">Tipo: ${PokeTipo} </p>
+        </div>
     </div>
     <div id="statsCard">
       <p class="fs-1 border-bottom border-3">Estadísticas</p>
@@ -35,18 +42,22 @@ const mostrarCard = async (id) => {
 
 /* IIFE para insertar imagenes */
 (async () => {
-  const idPokemones = 20;
+  const idPokemones = 50;
   let pokemonAllImg = "";
   for (let id = 1; id <= idPokemones; id++) {
     const data = await getPokemons(id);
     const pokemonsName = data.nombre;
     const pokemonsImg = data.img;
     const pokemonsTipo = data.tipo;
+    let PokeTipo = "";
+    for (let i = 0; i < pokemonsTipo.length; i++) {
+      PokeTipo += `${pokemonsTipo[i]} `;
+    }
     pokemonAllImg += `
     <div id="pokeCard" class="fs-2">
       <img id="imgCard" class="container m-2 p-2" src="${pokemonsImg}">
       <p id="nombrePoke" class="fw-bold text-capitalize border-bottom border-3">${pokemonsName}</p>
-      <p class="text-capitalize">${pokemonsTipo} </p>
+      <p id="idTipoText" class="text-capitalize">Tipo: ${PokeTipo}</p>
     </div>`;
     allCardsSection.innerHTML = pokemonAllImg;
   }
