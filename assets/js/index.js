@@ -5,8 +5,8 @@ const allCardsSection = document.querySelector("#allCard-section");
 const inputPokemon = document.querySelector("#inputId");
 const btnPokemon = document.querySelector("#btnBuscar");
 btnPokemon.addEventListener("click", (e) => {
-  e.preventDefault();
-  mostrarCard(inputPokemon.value);
+  e.preventDefault(); 
+  mostrarCard((inputPokemon.value).toLowerCase());
 });
 
 /* Funcion para mostrar Card al buscar en el input */
