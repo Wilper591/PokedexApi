@@ -7,7 +7,7 @@
   font-weight: 400;
   font-style: normal;
   --rojo: #e3350d;
-  --amarillo: #ffcd00;
+  --amarillo: #f6fa1bf3;
   --azul: #356abc;
 }
 
@@ -22,6 +22,7 @@ body {
   color: var(--amarillo);
   border: 2px solid black;
 }
+/* Estilos del Card que inserta el input */
 #card-section {
   display: flex;
   flex-direction: column;
@@ -29,10 +30,9 @@ body {
   align-items: center;
   margin: 3rem;
 }
-
 #inputCard,
 #statsCard {
-  color: yellow;
+  color: var(--amarillo);
   background-color: var(--rojo);
   border: 4px solid var(--azul);
   border-radius: 5%;
@@ -42,6 +42,14 @@ body {
   margin: 2rem;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: var(--azul);
+}
+#statsCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#imgInput {
+  height: 15rem;
 }
 #pokeIDInput {
   text-align: start;
@@ -54,7 +62,17 @@ body {
   font-size: 1.5rem;
   text-align: start;
   margin: 0 0 0 1rem;
+  display: flex;
+
 }
+#tipoText {
+  background-color: var(--azul);
+  border-radius: 15px;
+  text-align: center;
+  margin: 0 0.5rem;
+  padding: 0.3rem;
+}
+/* Estilos allCard-section */
 #allTitulo {
   font-size: 4rem;
   font-weight: bold;
@@ -68,41 +86,37 @@ body {
   border: 4px solid var(--azul);
   border-radius: 5%;
   margin: 4rem;
-  width: 15rem;
+  width: 18rem;
   height: 20rem;
   text-align: center;
   -webkit-text-stroke-width: 1.3px;
   -webkit-text-stroke-color: var(--azul);
 }
-
-#pokeIDAll {
+#imgAllCard {
+  max-height: 10rem;
+}
+#pokeIdAll {
   font-size: 1rem;
   text-align: start;
   color: var(--amarillo);
-  margin: 1rem 0 0 1rem;
+  margin: 0 0.5rem;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: var(--azul);
 }
-#imgInput {
-  height: 15rem;
-}
-#idTipoText {
+#tipoAll {
   font-size: 1.5rem;
   text-align: start;
-  margin: 0 0 0 1rem;
-}
-#contenedorTipo {
+  margin: 0 0.5rem;
   display: flex;
-  flex-direction: column;
 }
-#statsCard {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+#tipoAllText {
+  background-color: var(--azul);
+  border-radius: 15px;
+  text-align: center;
+  margin: 0 0.5rem;
+  padding: 0.3rem;
 }
-#imgCard {
-  max-height: 10rem;
-}
+/* Media Query para Responsividad */
 @media (min-width: 769px) {
   #card-section {
     display: flex;
