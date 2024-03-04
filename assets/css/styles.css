@@ -36,8 +36,8 @@ body {
   background-color: var(--rojo);
   border: 4px solid var(--azul);
   border-radius: 5%;
-  width: 16rem;
-  height: 25rem;
+  width: 18rem;
+  height: auto;
   text-align: center;
   margin: 2rem;
   -webkit-text-stroke-width: 1px;
@@ -45,11 +45,14 @@ body {
 }
 #statsCard {
   display: flex;
+  width: 20rem;
+  height: 25rem;
   flex-direction: column;
   justify-content: center;
 }
 #imgInput {
-  height: 15rem;
+  height: auto;
+  width: 15;
 }
 #pokeIDInput {
   text-align: start;
@@ -63,7 +66,6 @@ body {
   text-align: start;
   margin: 0 0 0 1rem;
   display: flex;
-
 }
 #tipoText {
   background-color: var(--azul);

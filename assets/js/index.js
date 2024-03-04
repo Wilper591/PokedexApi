@@ -1,5 +1,4 @@
 import { getPokemons } from "./controllers/pokemonData.js";
-import { getAllPokemons } from "./controllers/pokemonAllData.js";
 const cardSection = document.querySelector("#card-section");
 const allCardsSection = document.querySelector("#allPokeCards");
 const inputPokemon = document.querySelector("#inputId");
@@ -22,17 +21,17 @@ const mostrarCard = async (id) => {
   }
   /* Iterador de estadisticas pokemon */
   for (let i = 0; i < pokemons.estadisticasName.length; i++) {
-    estadisticasPokemon += `<p class="text-uppercase">
+    estadisticasPokemon += `<p class="text-uppercase fs-4">
         ${pokemons.estadisticasName[i]}: ${pokemons.estadisticasValor[i]}
     </p>`;
   }
   pokemonCards += `
     <div id="inputCard" class="text-center">
-        <p class="fs-3 text-capitalize border-bottom border-3"> ${pokemons.nombre}</p>
-          <img id="imgInput" class="container m-1" src="${pokemons.img}">
-        <div class="border-top border-3">
+    <p class="fs-2 text-capitalize border-bottom border-3"> ${pokemons.nombre}</p>
+    <img id="imgInput" class="container m-1" src="${pokemons.img}">
+    <div class="border-top border-3">
           <p id="pokeIDInput">N°: ${pokemons.id}</p>
-          <h2 id="inputTipo" class="text-capitalize">tipo: ${PokeTipo}</h2 >
+          <h2 id="inputTipo" class="text-capitalize mb-1">tipo: ${PokeTipo}</h2 >
         </div>
     </div>
     <div id="statsCard">

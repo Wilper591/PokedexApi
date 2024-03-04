@@ -22,8 +22,10 @@ export const getPokemons = async (id) => {
       imgUrl = data.sprites.other.dream_world.front_default;
     } else if (data.sprites.other["official-artwork"].front_default !== null) {
       imgUrl = data.sprites.other["official-artwork"].front_default;
-    } else {
+    } else if (data.sprites.other.home.front_default != null) {
       imgUrl = data.sprites.other.home.front_default;
+    } else {
+      imgUrl = "https://upload.wikimedia.org/wikipedia/commons/d/da/Imagen_no_disponible.svg";
     }
     const pokemon = {
       id: data.id,
