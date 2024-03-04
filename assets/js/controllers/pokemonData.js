@@ -26,6 +26,7 @@ export const getPokemons = async (id) => {
       imgUrl = data.sprites.other.home.front_default;
     }
     const pokemon = {
+      id: data.id,
       nombre: data.name,
       img: imgUrl,
       tipo: data.types.map((tipos) => tipos.type.name),

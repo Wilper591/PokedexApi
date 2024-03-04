@@ -6,44 +6,94 @@
   font-family: "Madimi One", sans-serif;
   font-weight: 400;
   font-style: normal;
+  --rojo: #e3350d;
+  --amarillo: #ffcd00;
+  --azul: #356abc;
 }
+
 body {
   background-color: bisque;
 }
 #inputId {
   width: 20%;
 }
+#btnBuscar {
+  background-color: var(--azul);
+  color: var(--amarillo);
+  border: 2px solid black;
+}
+#card-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem;
+}
 
-#pokeCard {
+#inputCard,
+#statsCard {
   color: yellow;
-  background-color: red;
-  border: 4px solid blue;
+  background-color: var(--rojo);
+  border: 4px solid var(--azul);
+  border-radius: 5%;
+  width: 16rem;
+  height: 25rem;
+  text-align: center;
+  margin: 2rem;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--azul);
+}
+#pokeIDInput {
+  text-align: start;
+  color: var(--amarillo);
+  margin: 1rem 0 0 1rem;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--azul);
+}
+#inputTipo {
+  font-size: 1.5rem;
+  text-align: start;
+  margin: 0 0 0 1rem;
+}
+#allTitulo {
+  font-size: 4rem;
+  font-weight: bold;
+  color: var(--amarillo);
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: var(--azul);
+}
+#pokeCard {
+  color: var(--amarillo);
+  background-color: var(--rojo);
+  border: 4px solid var(--azul);
   border-radius: 5%;
   margin: 4rem;
   width: 15rem;
   height: 20rem;
   text-align: center;
+  -webkit-text-stroke-width: 1.3px;
+  -webkit-text-stroke-color: var(--azul);
 }
-#inputCard, #statsCard {
-  color: yellow;
-  background-color: red;
-  border: 4px solid blue;
-  border-radius: 5%;
-  margin: 4rem;
-  width: 16rem;
-  height: 25rem;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+
+#pokeIDAll {
+  font-size: 1rem;
+  text-align: start;
+  color: var(--amarillo);
+  margin: 1rem 0 0 1rem;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--azul);
+}
+#imgInput {
+  height: 15rem;
 }
 #idTipoText {
   font-size: 1.5rem;
+  text-align: start;
+  margin: 0 0 0 1rem;
 }
 #contenedorTipo {
   display: flex;
   flex-direction: column;
-  
 }
 #statsCard {
   display: flex;
@@ -52,4 +102,10 @@ body {
 }
 #imgCard {
   max-height: 10rem;
+}
+@media (min-width: 769px) {
+  #card-section {
+    display: flex;
+    flex-direction: row;
+  }
 }
