@@ -59,9 +59,9 @@ const mostrarCard = async (id) => {
       PokeTipos += `<p id="tipoAllText" class="text-capitalize">${pokemonsTipo[i]}</p>`;
     }
     pokemonAllImg += `
-    <div id="pokeCard" class="fs-2">
+    <div id="pokeCard">
       <img id="imgAllCard" class="container m-2 p-2" src="${pokemonsImg}">
-      <p class="fs-3 text-capitalize border-bottom border-3">${pokemonsName}</p>
+      <p class="text-capitalize border-bottom border-3">${pokemonsName}</p>
       <p id="pokeIdAll" class="">N°: ${pokemonsID}</p>
       <h2 id="tipoAll" class="text-capitalize">tipo: ${PokeTipos}</h2>
     </div>`;
